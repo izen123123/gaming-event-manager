@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php include 'assets/php/components/header.php'; ?>
             <main class="success-container">
                 <div class="success-card">
-                    <h1>✅ Inscription réussie !</h1>
+                    <h1>Inscription réussie !</h1>
                     <p>Merci <strong><?php echo $username; ?></strong> !</p>
                     <p>Ton inscription pour le tournoi n°<?php echo $tournament_id; ?> a été validée.</p>
                     <p>Un mail de confirmation sera envoyé à : <em><?php echo $email; ?></em></p>
