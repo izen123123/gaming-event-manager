@@ -1,3 +1,9 @@
+<?php
+// Sprint 3
+$jsonData = file_get_contents('data/tournaments.json');
+$tournaments = json_decode($jsonData, true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -30,19 +36,21 @@
         <section id="tournaments">
             <h2>Tournois à venir</h2>
             <div class="tournament-list">
-                <article class="tournament-card">
-                <!-- Emplacement pour l'image fournie par le client -->
-                    <div class="tournament-banner">
-                        <img src="assets/img/cs2.webp" alt="Counter Strike 2">
-                    </div>
+                <?php foreach ($tournaments as $t): ?>
+                    <article class="tournament-card">
+                    <!-- Emplacement pour l'image fournie par le client -->
+                        <div class="tournament-banner">
+                            <img src="<?php echo $t['image']; ?>" alt="<?php echo $t['title']; ?>">
+                        </div>
                 
-                    <div class="tournament-info">
-                        <h3>Counter Strike 2</h3>
-                        <p>Date : 2026-05-15</p>
-                        <p>Places : 10/16</p>
-                        <a href="details.php?id=1" class="btn">Voir les détails</a>
-                    </div>
-                </article>
+                        <div class="tournament-info">
+                            <h3><?php echo $t['title']; ?></h3>
+                            <p>Date : <?php echo $t['date']; ?></p>
+                            <p>Places : <?php echo $t['seats']; ?></p>
+                            <a href="details.php?id=<?php echo $t['id']; ?>" class="btn">Voir les détails</a>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>

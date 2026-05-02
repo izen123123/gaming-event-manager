@@ -1,8 +1,9 @@
 /* Sprint 2 */
 :root {
     /* Thème Clair */
-    --bg-color: #f0f2f5;
-    --text-color: #1c1e21;
+    --bg-color: #f4f7f6;
+    --secondary-bg: #ffffff;
+    --text-color: #2d3436;
     --header-bg: #ffffff;
     --primary-color: #6366f1; 
     --accent-color: #ff6b7a;
@@ -72,11 +73,14 @@ header nav ul li a {
     color: var(--text-color);
     text-decoration: none;
     line-height: 1;
-    transition: transform 0.2s, color 0.3s;
+    transition: transform 0.3s ease;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .logo span {
     color: var(--accent-color);
+    display: inline-block;
 }
 
 .logo:hover {

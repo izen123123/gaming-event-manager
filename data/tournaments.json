@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Counter Strike 2",
+        "date": "2026-05-15",
+        "seats": "10/16",
+        "image": "assets/img/cs2.webp"
+    },
+    {
+        "id": 2,
+        "title": "EA Sports FC 25",
+        "date": "2026-05-20",
+        "seats": "32/64",
+        "image": "assets/img/fc25.webp"
+    },
+    {
+        "id": 3,
+        "title": "League of Legends",
+        "date": "2026-06-01",
+        "seats": "5/20",
+        "image": "assets/img/lol_cover.webp"
+    },
+    {
+        "id": 4,
+        "title": "Mario Kart 8 Deluxe",
+        "date": "2026-06-05",
+        "seats": "12/12",
+        "image": "assets/img/mario_kart.webp"
+    },
+    {
+        "id": 5,
+        "title": "Rocket League",
+        "date": "2026-06-15",
+        "seats": "8/24",
+        "image": "assets/img/rocket_league.webp"
+    },
+    {
+        "id": 6,
+        "title": "Super Smash Bros. Ultimate",
+        "date": "2026-06-20",
+        "seats": "16/32",
+        "image": "assets/img/ssbu.webp"
+    }
+]
