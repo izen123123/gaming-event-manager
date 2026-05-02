@@ -15,22 +15,7 @@ $tournaments = json_decode($jsonData, true);
 </head>
 <body>
 
-    <!-- En-tête : Logo et bouton de changement de thème -->
-    <header>
-        <a href="index.php" class="logo">G<span>E</span>M</a>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="login.php">Connexion</a></li>
-            </ul>
-        </nav>
-
-        <div class="header-actions">
-            <button id="theme-toggle" aria-label="Changer le thème">Dark Mode</button>
-        </div>
-    </header>
+    <?php include 'assets/php/components/header.php'; ?>
 
     <main>
         <section id="tournaments">
@@ -55,10 +40,6 @@ $tournaments = json_decode($jsonData, true);
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 BDE Pôle E-Sport - Projet GEM</p>
-    </footer>
-
-    <script src="assets/js/main.js"></script>
+    <?php include 'assets/php/components/footer.php'; ?>
 </body>
 </html>
