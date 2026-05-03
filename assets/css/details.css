@@ -10,6 +10,7 @@
     font-weight: 500;
 }
 
+/* Utilisation de CSS Grid pour la mise en page */
 .detail-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -26,6 +27,7 @@
     object-fit: cover;
 }
 
+/* Flexbox pour aligner les informations clés du tournoi */
 .info-grid {
     display: flex;
     gap: 30px;
@@ -42,17 +44,20 @@
     margin-top: 20px;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     .detail-content {
         grid-template-columns: 1fr;
     }
 }
 
+/* Adaptation des bordures pour Dark Mode */
 [data-theme="dark"] .info-grid {
     border-top: 1px solid #444;
     border-bottom: 1px solid #444;
 }
 
+/* Style de la zone de formulaire d'inscription */
 .registration-area {
     background-color: var(--secondary-bg);
     padding: 20px;
@@ -86,10 +91,12 @@
     outline: none;
 }
 
+/* Feedback visuel lors du focus*/
 .input-group input:focus {
     border-color: var(--primary-color);
 }
 
+/* Style des messages d'erreur JS */
 .error-msg {
     color: var(--accent-color);
     font-size: 0.8rem;

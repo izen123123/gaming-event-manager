@@ -1,6 +1,6 @@
 /* Sprint 2 */
 
-/* 1. configuration du conteneur */
+/* configuration du conteneur */
 #tournaments {
     padding: 2rem 5%;
 }
@@ -10,14 +10,14 @@
     text-align: center;
 }
 
-/* 2. Grid responsive */
+/* Grid responsive */
 .tournament-list { 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-/* 3. design des cartes de tournoi */
+/* design des cartes de tournoi */
 .tournament-card {
     background-color: var(--secondary-bg);
     border-radius: 12px;
@@ -31,7 +31,7 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* 4. gestion des visuels fournis */
+/* gestion des visuels fournis */
 .tournament-banner img {
     width: 100%;
     height: 200px;
@@ -42,7 +42,7 @@
     padding: 1.5rem;
 }
 
-/* 5. style des boutons  */
+/* style des boutons  */
 .btn {
     display: inline-block;
     background-color: var(--accent-color);

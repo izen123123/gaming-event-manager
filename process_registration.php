@@ -21,6 +21,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $db = new PDO('sqlite:database.sqlite');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+            // Vérification des places disponibles
+            // Récupérer le nombre de places maximum
+            $jsonData = file_get_contents('data/tournaments.json');
+            $tournaments = json_decode($jsonData, true);
+            $max_seats = 0;
+            foreach ($tournaments as $t) {
+                if ($t['id'] === $tournament_id) {
+                    $max_seats = (int)$t['seats'];
+                    break;
+                }
+            }
+
+            // Compter le nombre d'inscriptions actuelles dans la base SQLite
+            $stmtCount = $db->prepare("SELECT COUNT(*) FROM registrations WHERE tournament_id = :tid");
+            $stmtCount->execute([':tid' => $tournament_id]);
+            $current_inscriptions = (int)$stmtCount->fetchColumn();
+
+            // S'il n'y a plus de place, on bloque l'inscription
+            if ($current_inscriptions >= $max_seats) {
+                header("Location: details.php?id=$tournament_id&error=" . urlencode("Désolé, ce tournoi est déjà complet !"));
+                exit;
+            }
+            
+
             // Préparation de la requête SQL pour éviter les injections SQL
             $stmt = $db->prepare("INSERT INTO registrations (username, email, tournament_id) VALUES (:u, :e, :t)");
 

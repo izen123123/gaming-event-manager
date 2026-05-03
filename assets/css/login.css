@@ -1,3 +1,4 @@
+/* Centrage du formulaire via Flexbox */
 .login-container {
     display: flex;
     justify-content: center;
@@ -42,6 +43,7 @@
     font-size: 1rem;
 }
 
+/* Support de Dark Mode pour les champs de saisie*/
 [data-theme="dark"] .input-group input {
     background: #2a2a2a;
     color: #fff;
@@ -60,6 +62,7 @@
     transform: scale(1.02);
 }
 
+/* Ajustement du padding sur mobile */
 @media (max-width: 768px) {
     .login-form {
         padding: 25px;

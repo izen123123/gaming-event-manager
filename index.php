@@ -23,8 +23,8 @@ $tournaments = json_decode($jsonData, true);
             <h2>Tournois à venir</h2>
             <div class="tournament-list">
                 <?php foreach ($tournaments as $t): ?>
+                    <!-- Sprint 3: Boucle PHP pour générer les cartes de tournois -->
                     <article class="tournament-card">
-                    <!-- Emplacement pour l'image fournie par le client -->
                         <div class="tournament-banner">
                             <img src="<?php echo $t['image']; ?>" alt="<?php echo $t['title']; ?>">
                         </div>
