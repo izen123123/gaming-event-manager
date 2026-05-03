@@ -1,5 +1,6 @@
 <?php
 // Sprint 3
+session_start();
 $jsonData = file_get_contents('data/tournaments.json');
 $tournaments = json_decode($jsonData, true);
 ?>

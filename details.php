@@ -1,28 +1,29 @@
 <?php
-    $jsonPath    = 'data/tournaments.json';
-    $tournaments = [];
-    $tournament  = null;
+session_start();
+$jsonPath    = 'data/tournaments.json';
+$tournaments = [];
+$tournament  = null;
 
-    if (file_exists($jsonPath)) {
-    $jsonData    = file_get_contents($jsonPath);
-    $tournaments = json_decode($jsonData, true);
-    }
+if (file_exists($jsonPath)) {
+$jsonData    = file_get_contents($jsonPath);
+$tournaments = json_decode($jsonData, true);
+}
 
-    $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
-    if (! empty($tournaments)) {
-    foreach ($tournaments as $t) {
-        if ($t['id'] === $id) {
-            $tournament = $t;
-            break;
-        }
+if (! empty($tournaments)) {
+foreach ($tournaments as $t) {
+    if ($t['id'] === $id) {
+        $tournament = $t;
+        break;
     }
-    }
+}
+}
 
-    if (! $tournament) {
-    header("Location: index.php");
-    exit;
-    }
+if (! $tournament) {
+header("Location: index.php");
+exit;
+}
 ?>
 
 <!DOCTYPE html>
