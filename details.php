@@ -1,16 +1,18 @@
 <?php
+// Sprint 4: Affichage des details d'un tournoi et formulaire d'inscription
 session_start();
-$jsonPath    = 'data/tournaments.json';
+$jsonPath = 'data/tournaments.json';
 $tournaments = [];
-$tournament  = null;
+$tournament = null;
 
 if (file_exists($jsonPath)) {
-$jsonData    = file_get_contents($jsonPath);
+$jsonData = file_get_contents($jsonPath);
 $tournaments = json_decode($jsonData, true);
 }
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
+// Recherche du tournoi correspondant à ID
 if (! empty($tournaments)) {
 foreach ($tournaments as $t) {
     if ($t['id'] === $id) {
@@ -20,6 +22,7 @@ foreach ($tournaments as $t) {
 }
 }
 
+// Si le tournoi n'exsite pas
 if (! $tournament) {
 header("Location: index.php");
 exit;
@@ -66,9 +69,10 @@ exit;
                 </div>
 
 
-
+                <!-- Sprint 5: Bouton pour afficher/masquer le formulaire -->
                 <button type="button" id="toggle-form-btn" class="btn btn-register">S'inscrire au tournoi</button>
 
+                <!-- Sprint 4: Formulaire d'inscription -->
                 <div id="registration-area" class="registration-area" style="display: none; margin-top: 20px;">
                     <h3>Formulaire d'Inscription</h3>
                     <form id="enroll-form" action="process_registration.php" method="POST" novalidate>

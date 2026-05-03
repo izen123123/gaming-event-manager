@@ -1,4 +1,5 @@
 <?php
+// Sprint 4: Page de confirmation d'inscription
 session_start();
 $username = htmlspecialchars($_GET['user'] ?? 'Joueur');
 $tournament_id = htmlspecialchars($_GET['tid'] ?? '0');
