@@ -49,13 +49,18 @@ L'objectif du projet est de proposer une plateforme permettant de gérer des tou
 
 ![Accueil](docs/screenshots/home.png)
 
-### Détails d'un tournoi
+### Forme de registration
 
-![Détails](docs/screenshots/details.png)
+![Admin](docs/screenshots/registration-form.png)
 
 ### Tableau de bord administrateur
 
-![Admin](docs/screenshots/admin-dashboard.png)
+![Admin](docs/screenshots/admin.png)
+
+
+### Dark mode
+
+![Admin](docs/screenshots/dark-mode.png)
 
 ---
 
